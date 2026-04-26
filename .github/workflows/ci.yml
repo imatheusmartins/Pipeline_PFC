@@ -21,13 +21,17 @@ jobs:
         shell: bash
         run: test -f index.html
 
+      - name: Verificar estrutura HTML basica
+        shell: bash
+        run: grep -Eiq "<html|<head|<body" index.html
+
       - name: Verificar se a pagina possui titulo
         shell: bash
         run: grep -Eq "<title>.*</title>" index.html
 
-      - name: Verificar conteudo principal sobre retinopatia
+      - name: Verificar se a pagina possui cabecalho principal
         shell: bash
-        run: grep -Eiq "retinopatia|deep learning" index.html
+        run: grep -Eq "<h1>.*</h1>" index.html
 
       - name: Salvar artefato para auditoria
         uses: actions/upload-artifact@v4
