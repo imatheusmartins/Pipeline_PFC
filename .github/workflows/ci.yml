@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - dev
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  validate-static-site:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Verificar se index.html existe
+        shell: bash
+        run: test -f index.html
+
+      - name: Verificar titulo da pagina
+        shell: bash
+        run: grep -q "<title>Pipeline CI/CD - Retinopatia Diabetica</title>" index.html
+
+      - name: Verificar conteudo principal
+        shell: bash
+        run: grep -q "Deteccao de Retinopatia Diabetica com Deep Learning" index.html
+
+      - name: Salvar artefato para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-estatico
+          path: index.html

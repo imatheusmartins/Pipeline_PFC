@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipeline CI/CD - Retinopatia Diabetica</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #183153;
+      --muted: #5e6d7e;
+      --primary: #0a7ea4;
+      --accent: #2db57b;
+      --border: #d7e1eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(160deg, #eef6ff 0%, #f8fcff 55%, #edf8f1 100%);
+      color: var(--text);
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(760px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 20px 60px rgba(24, 49, 83, 0.12);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(10, 126, 164, 0.1);
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .item {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .status {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--accent);
+      background: rgba(45, 181, 123, 0.08);
+      border-radius: 12px;
+      color: #1f5b46;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <span class="badge">Simulacao CI/CD</span>
+      <h1>Deteccao de Retinopatia Diabetica com Deep Learning</h1>
+      <p>
+        Esta pagina foi criada para demonstrar um pipeline CI/CD simples com GitHub Actions
+        e GitHub Pages, simulando a entrega continua de uma aplicacao do projeto de TCC.
+      </p>
+      <p>
+        O foco do TCC e investigar o uso de modelos de deep learning como ferramenta de auxilio
+        na deteccao de retinopatia diabetica a partir de imagens de fundo de olho.
+      </p>
+
+      <div class="grid">
+        <article class="item">
+          <strong>Branch de desenvolvimento</strong>
+          <span>`dev` recebe alteracoes e dispara a etapa de integracao continua.</span>
+        </article>
+        <article class="item">
+          <strong>Branch principal</strong>
+          <span>`master` representa a versao pronta para publicacao.</span>
+        </article>
+        <article class="item">
+          <strong>CI</strong>
+          <span>Valida se o HTML existe e contem elementos esperados.</span>
+        </article>
+        <article class="item">
+          <strong>CD</strong>
+          <span>Publica automaticamente a pagina quando houver push na `master`.</span>
+        </article>
+      </div>
+
+      <div class="status">
+        Pipeline de exemplo pronto para apresentacao academica.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
