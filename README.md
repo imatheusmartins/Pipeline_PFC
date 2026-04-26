@@ -1,15 +1,15 @@
-# Pipeline CI/CD Simulado
+# Deep learning aplicado ao diagnostico assistido de retinopatia diabetica
 
-Este repositorio contem uma simulacao simples de CI/CD para apresentacao academica do projeto de TCC sobre deteccao de retinopatia diabetica com deep learning.
+Este repositorio apresenta a estrutura de pipeline CI/CD utilizada no contexto do projeto de TCC sobre deep learning aplicado ao diagnostico assistido de retinopatia diabetica.
 
 ## Objetivo
 
-Demonstrar um fluxo basico de:
+Organizar um fluxo basico de:
 
 - desenvolvimento em `dev`
 - integracao continua com GitHub Actions
-- merge para `master`
-- deploy continuo com GitHub Pages
+- consolidacao de versoes em `master`
+- publicacao continua com GitHub Pages
 
 ## Estrutura do fluxo
 
@@ -21,7 +21,7 @@ Demonstrar um fluxo basico de:
 
 ## Arquivos principais
 
-- `index.html`: pagina estatica de exemplo para o projeto
+- `index.html`: pagina inicial de apresentacao do projeto
 - `.github/workflows/ci.yml`: integracao continua
 - `.github/workflows/deploy.yml`: entrega continua
 
@@ -35,7 +35,7 @@ Demonstrar um fluxo basico de:
 git init
 git branch -M master
 git add .
-git commit -m "feat: cria simulacao de pipeline ci cd"
+git commit -m "feat: estrutura pipeline ci cd do projeto"
 git remote add origin <URL_DO_SEU_REPOSITORIO>
 git push -u origin master
 ```
@@ -51,15 +51,15 @@ git push -u origin dev
 6. Faça alguma pequena alteracao em `dev`, envie com `git push` e observe o workflow `CI`.
 7. Abra um Pull Request de `dev` para `master`, faça o merge e observe o workflow `CD`.
 
-## Sugestao para apresentacao
+## Relacao com o projeto
 
 Voce pode explicar que:
 
-- `dev` simula o ambiente de desenvolvimento
-- `master` simula o ambiente de producao
-- o CI verifica automaticamente se a aplicacao minima continua valida
+- `dev` concentra as evolucoes do projeto em desenvolvimento
+- `master` representa a versao principal publicada
+- o CI verifica automaticamente a consistencia minima da aplicacao
 - o CD publica a versao mais recente sem intervencao manual
 
-## Possiveis falas para a banca
+## Apresentacao resumida
 
-"Mesmo com o sistema principal ainda em desenvolvimento, implementei uma simulacao funcional de CI/CD para representar como o projeto pode evoluir com automacao de testes e deploy. O pipeline foi construido com ferramentas gratuitas e de facil adocao."
+"Este projeto organiza uma estrutura de CI/CD para apoiar a evolucao e a publicacao de versoes de uma aplicacao voltada ao diagnostico assistido de retinopatia diabetica com deep learning. A proposta reforca boas praticas de desenvolvimento, validacao e entrega continua."
