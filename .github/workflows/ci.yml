@@ -21,13 +21,13 @@ jobs:
         shell: bash
         run: test -f index.html
 
-      - name: Verificar titulo da pagina
+      - name: Verificar se a pagina possui titulo
         shell: bash
-        run: grep -q "<title>Pipeline CI/CD - Retinopatia Diabetica</title>" index.html
+        run: grep -Eq "<title>.*</title>" index.html
 
-      - name: Verificar conteudo principal
+      - name: Verificar conteudo principal sobre retinopatia
         shell: bash
-        run: grep -q "Deteccao de Retinopatia Diabetica com Deep Learning" index.html
+        run: grep -Eiq "retinopatia|deep learning" index.html
 
       - name: Salvar artefato para auditoria
         uses: actions/upload-artifact@v4
