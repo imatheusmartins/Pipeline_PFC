@@ -1,34 +1,35 @@
-# Deep learning aplicado ao diagnostico assistido de retinopatia diabetica
+# Deep learning aplicado ao diagnóstico assistido de retinopatia diabética
 
-Este repositorio apresenta a estrutura de pipeline CI/CD utilizada no contexto do projeto de TCC sobre deep learning aplicado ao diagnostico assistido de retinopatia diabetica.
+Este repositório apresenta a estrutura de pipeline CI/CD utilizada no contexto do projeto de TCC sobre deep learning aplicado ao diagnóstico assistido de retinopatia diabética.
 
 ## Objetivo
 
-Organizar um fluxo basico de:
+Organizar um fluxo básico de:
 
 - desenvolvimento em `dev`
-- integracao continua com GitHub Actions
-- consolidacao de versoes em `master`
-- publicacao continua com GitHub Pages
+- integração contínua com GitHub Actions
+- consolidação de versões em `master`
+- publicação contínua com GitHub Pages
 
 ## Estrutura do fluxo
 
-1. Voce faz alteracoes na branch `dev`.
-2. O workflow de CI valida se o arquivo `index.html` existe e se contem o conteudo esperado.
-3. Depois, voce abre um Pull Request de `dev` para `master`.
+1. Você faz alterações na branch `dev`.
+2. O workflow de CI valida se o arquivo `index.html` existe e se contém o conteúdo esperado.
+3. Depois, você abre um Pull Request de `dev` para `master`.
 4. Ao aprovar e fazer merge, o push na `master` dispara o workflow de CD.
-5. O GitHub Pages publica automaticamente a pagina.
+5. O GitHub Pages publica automaticamente a página.
 
 ## Arquivos principais
 
-- `index.html`: pagina inicial de apresentacao do projeto
-- `.github/workflows/ci.yml`: integracao continua
-- `.github/workflows/deploy.yml`: entrega continua
+- `index.html`: página inicial de apresentação do projeto
+- `styles.css`: arquivo de estilos da página
+- `.github/workflows/ci.yml`: integração contínua
+- `.github/workflows/deploy.yml`: entrega contínua
 
 ## Como usar
 
-1. Crie um repositorio no GitHub.
-2. Envie estes arquivos para o repositorio.
+1. Crie um repositório no GitHub.
+2. Envie estes arquivos para o repositório.
 3. Inicialize o Git localmente:
 
 ```powershell
@@ -48,18 +49,18 @@ git push -u origin dev
 ```
 
 5. No GitHub, acesse `Settings > Pages` e selecione `GitHub Actions` como fonte de deploy.
-6. Faça alguma pequena alteracao em `dev`, envie com `git push` e observe o workflow `CI`.
+6. Faça alguma pequena alteração em `dev`, envie com `git push` e observe o workflow `CI`.
 7. Abra um Pull Request de `dev` para `master`, faça o merge e observe o workflow `CD`.
 
-## Relacao com o projeto
+## Relação com o projeto
 
-Voce pode explicar que:
+Você pode explicar que:
 
-- `dev` concentra as evolucoes do projeto em desenvolvimento
-- `master` representa a versao principal publicada
-- o CI verifica automaticamente a consistencia minima da aplicacao
-- o CD publica a versao mais recente sem intervencao manual
+- `dev` concentra as evoluções do projeto em desenvolvimento
+- `master` representa a versão principal publicada
+- o CI verifica automaticamente a consistência mínima da aplicação
+- o CD publica a versão mais recente sem intervenção manual
 
-## Apresentacao resumida
+## Apresentação resumida
 
-"Este projeto organiza uma estrutura de CI/CD para apoiar a evolucao e a publicacao de versoes de uma aplicacao voltada ao diagnostico assistido de retinopatia diabetica com deep learning. A proposta reforca boas praticas de desenvolvimento, validacao e entrega continua."
+"Este projeto organiza uma estrutura de CI/CD para apoiar a evolução e a publicação de versões de uma aplicação voltada ao diagnóstico assistido de retinopatia diabética com deep learning. A proposta reforça boas práticas de desenvolvimento, validação e entrega contínua."
