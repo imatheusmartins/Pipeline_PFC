@@ -10,31 +10,36 @@ on:
       - master
 
 jobs:
-  validate-static-site:
+  validate-static-landing:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do codigo
         uses: actions/checkout@v4
 
-      - name: Verificar se index.html existe
+      - name: Verificar arquivos principais
         shell: bash
-        run: test -f index.html
+        run: |
+          test -f index.html
+          test -f styles.css
 
-      - name: Verificar estrutura HTML basica
+      - name: Verificar estrutura HTML essencial
         shell: bash
-        run: grep -Eiq "<html|<head|<body" index.html
+        run: |
+          grep -Eq "<title>.*</title>" index.html
+          grep -Eq "<h1>.*</h1>" index.html
+          grep -Eq "Projeto|Referencial|CI/CD" index.html
 
-      - name: Verificar se a pagina possui titulo
+      - name: Verificar referencias de estilos e imagens
         shell: bash
-        run: grep -Eq "<title>.*</title>" index.html
-
-      - name: Verificar se a pagina possui cabecalho principal
-        shell: bash
-        run: grep -Eq "<h1>.*</h1>" index.html
+        run: |
+          grep -Eq 'href="styles.css"' index.html
+          grep -Eq 'src="assets/' index.html
 
       - name: Salvar artefato para auditoria
         uses: actions/upload-artifact@v4
         with:
-          name: site-estatico
-          path: index.html
+          name: static-landing
+          path: |
+            index.html
+            styles.css

@@ -3,55 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep learning aplicado ao diagnóstico assistido de retinopatia diabética</title>
+  <title>Hórus | Diagnóstico assistido de retinopatia diabética</title>
+  <meta
+    name="description"
+    content="Landing page do projeto Hórus, voltado ao diagnóstico assistido de retinopatia diabética com deep learning."
+  >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="hero" id="inicio">
+    <nav class="nav">
+      <a class="brand" href="#inicio">
+        <img
+          src="assets/logo.png"
+          alt="Logotipo do projeto Hórus"
+        >
+        <span>Hórus</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projeto">Projeto</a>
+        <a href="#referencial">Referencial teórico</a>
+        <a href="#equipe">Sobre nós</a>
+        <a href="#cicd">CI/CD</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <div class="hero-copy">
+        <span class="badge">Projeto de TCC</span>
+        <h1>Deep learning aplicado ao diagnóstico assistido de retinopatia diabética</h1>
+        <p>
+          O projeto Hórus apresenta uma proposta voltada ao diagnóstico assistido
+          de retinopatia diabética por meio da aplicação de técnicas de deep learning.
+        </p>
+        <p>
+          Esta página reúne, de forma objetiva, os principais eixos da proposta
+          e a estrutura inicial de CI/CD utilizada para organizar a evolução e a
+          publicação do projeto.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projeto">Conhecer o projeto</a>
+          <a class="button button-secondary" href="#cicd">Ver estrutura de CI/CD</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img
+          src="assets/eye.png"
+          alt="Imagem ilustrativa relacionada à análise ocular"
+        >
+      </div>
+    </section>
+  </header>
+
   <main>
-    <section class="card">
-      <span class="badge">Projeto de TCC</span>
-      <h1>Deep learning aplicado ao diagnóstico assistido de retinopatia diabética</h1>
-      <p>
-        Este projeto apresenta uma proposta voltada ao diagnóstico assistido de
-        retinopatia diabética por meio da aplicação de técnicas de deep learning.
-      </p>
-      <p>
-        Nesta etapa inicial, a página também descreve a estrutura de CI/CD adotada
-        para apoiar a organização, a validação e a publicação das versões do
-        projeto de forma contínua e controlada.
-      </p>
-
-      <div class="grid">
-        <article class="item">
-          <strong>Desenvolvimento</strong>
-          <span>As atualizações são realizadas na branch de desenvolvimento para facilitar a evolução do projeto.</span>
-        </article>
-        <article class="item">
-          <strong>Integração contínua</strong>
-          <span>O workflow de CI executa verificações automáticas para garantir a consistência mínima da aplicação.</span>
-        </article>
-        <article class="item">
-          <strong>Controle de versão</strong>
-          <span>As alterações aprovadas são integradas à branch principal para manter uma versão consolidada do sistema.</span>
-        </article>
-        <article class="item">
-          <strong>Entrega contínua</strong>
-          <span>Após a atualização da branch principal, a publicação da página pode ocorrer de forma automatizada.</span>
-        </article>
+    <section class="section" id="projeto">
+      <div class="section-heading">
+        <span class="section-label">Projeto</span>
+        <h2>Entenda a proposta do projeto</h2>
+        <p>
+          A proposta busca apoiar a identificação de sinais relacionados à
+          retinopatia diabética com o uso de recursos computacionais aplicados à
+          análise de imagens, dentro de um contexto acadêmico e de pesquisa.
+        </p>
       </div>
 
-      <div class="flow">
-        <h2>Estrutura inicial de CI/CD</h2>
-        <ol>
-          <li>O desenvolvimento das alterações acontece na branch <code>dev</code>.</li>
-          <li>A integração contínua verifica automaticamente se os arquivos essenciais do projeto permanecem válidos.</li>
-          <li>Depois da validação, as mudanças podem ser enviadas por meio de um Pull Request para a branch <code>master</code>.</li>
-          <li>Com a aprovação e o merge, a etapa de entrega contínua publica a versão mais recente da página.</li>
-        </ol>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Objetivo acadêmico</h3>
+          <p>
+            Estruturar uma base de desenvolvimento coerente com o tema do TCC e
+            com as etapas de construção da solução.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Aplicação prática</h3>
+          <p>
+            Explorar o uso de deep learning como apoio ao diagnóstico assistido,
+            considerando organização, consistência e evolução do projeto.
+          </p>
+        </article>
+        <article class="feature-card">
+          <h3>Apresentação contínua</h3>
+          <p>
+            Manter uma página principal atualizada, clara e adequada para
+            demonstração no GitHub Pages.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="referencial">
+      <div class="section-content">
+        <div class="section-heading">
+          <span class="section-label">Referencial teórico</span>
+          <h2>Confira o direcionamento conceitual do trabalho</h2>
+          <p>
+            O desenvolvimento do projeto está associado à aplicação de inteligência
+            artificial na área da saúde, com foco em visão computacional, análise
+            de imagens e apoio à tomada de decisão em contextos clínicos.
+          </p>
+        </div>
+        <img
+          class="section-image"
+          src="assets/team.png"
+          alt="Equipe de trabalho do projeto"
+        >
+      </div>
+    </section>
+
+    <section class="section" id="equipe">
+      <div class="section-content reverse">
+        <img
+          class="section-image"
+          src="assets/horus-logo.png"
+          alt="Identidade visual do projeto Hórus"
+        >
+        <div class="section-heading">
+          <span class="section-label">Sobre nós</span>
+          <h2>Conheça a identidade do projeto Hórus</h2>
+          <p>
+            A landing page principal foi simplificada para destacar o conteúdo
+            essencial do projeto com uma estrutura estática mais leve, preservando
+            a linha visual e os tópicos centrais anteriormente organizados na
+            versão em React.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="cicd">
+      <div class="section-heading">
+        <span class="section-label">CI/CD</span>
+        <h2>Estrutura inicial de integração e entrega contínuas</h2>
+        <p>
+          O repositório adota um fluxo simples para acompanhar a evolução da
+          página principal e garantir uma publicação organizada no GitHub Pages.
+        </p>
       </div>
 
-      <div class="status">
-        Projeto estruturado para acompanhamento, validação e publicação contínua de versões.
+      <div class="timeline">
+        <article class="timeline-item">
+          <strong>1. Desenvolvimento em `dev`</strong>
+          <p>As alterações são realizadas inicialmente na branch de desenvolvimento.</p>
+        </article>
+        <article class="timeline-item">
+          <strong>2. Validação automática</strong>
+          <p>O workflow de CI verifica se os arquivos principais da página continuam íntegros.</p>
+        </article>
+        <article class="timeline-item">
+          <strong>3. Pull Request para `master`</strong>
+          <p>Depois da conferência, as mudanças seguem para revisão e integração na branch principal.</p>
+        </article>
+        <article class="timeline-item">
+          <strong>4. Publicação no GitHub Pages</strong>
+          <p>Após o merge em `master`, o workflow de CD publica automaticamente a versão atualizada.</p>
+        </article>
       </div>
     </section>
   </main>

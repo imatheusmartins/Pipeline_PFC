@@ -1,57 +1,43 @@
 # Deep learning aplicado ao diagnóstico assistido de retinopatia diabética
 
-Este repositório reúne a estrutura inicial de integração contínua e entrega contínua adotada no desenvolvimento do projeto de TCC **Deep learning aplicado ao diagnóstico assistido de retinopatia diabética**.
+Este repositório reúne a página principal de apresentação do projeto de TCC e a estrutura inicial de CI/CD utilizada para automatizar sua validação e publicação no GitHub Pages.
 
-A proposta deste material é documentar como o projeto está sendo organizado em termos de versionamento, validação automática e publicação, de modo que a evolução da aplicação aconteça com mais controle, rastreabilidade e consistência.
+A proposta é manter uma landing page simples, estática e de fácil manutenção, alinhada ao tema do trabalho e suficiente para demonstrar a organização da camada de apresentação do projeto.
 
 ## Sobre o repositório
 
-O conteúdo deste repositório representa a base do fluxo de CI/CD utilizado no projeto. Além da página de apresentação, foram definidos workflows para validar alterações no código e automatizar a publicação da versão principal.
+O conteúdo principal publicado neste repositório é uma landing page em HTML e CSS, construída para apresentar de forma objetiva:
 
-Na prática, este repositório funciona como um apoio à condução do projeto, permitindo:
+- a proposta geral do projeto
+- o contexto acadêmico da aplicação
+- a identidade visual associada ao nome Hórus
+- a estrutura inicial de integração e entrega contínuas
 
-- manter uma separação entre desenvolvimento e versão principal
-- executar verificações automáticas a cada atualização relevante
-- reduzir falhas manuais no processo de integração
-- publicar a versão mais recente de forma padronizada
+A página principal publicada no GitHub Pages foi estruturada de forma estática. Essa escolha reduz a complexidade da publicação e torna o pipeline mais direto para fins de apresentação e acompanhamento.
 
 ## Como o CI/CD está sendo implementado
 
-O fluxo foi estruturado de forma simples e objetiva, compatível com a fase inicial do projeto.
+O fluxo atualmente adotado é intencionalmente simples:
 
-1. As alterações são realizadas na branch `dev`, destinada ao desenvolvimento.
-2. A cada atualização, o workflow de integração contínua executa validações básicas para verificar se a estrutura essencial da aplicação permanece íntegra.
-3. Após a conferência das mudanças, a integração com a branch `master` ocorre por meio de Pull Request.
-4. Quando o conteúdo é aprovado e incorporado à branch principal, o processo de entrega contínua é acionado.
-5. A publicação da página é realizada automaticamente com GitHub Pages.
+1. As alterações são desenvolvidas na branch `dev`.
+2. O workflow de CI é executado em atualizações para `dev`, `master` e também em Pull Requests destinados à branch principal.
+3. Durante a validação, o pipeline verifica a existência dos arquivos principais da página e confirma elementos essenciais da estrutura HTML.
+4. Após a aprovação e o merge em `master`, o workflow de CD publica automaticamente a versão atualizada no GitHub Pages.
 
-Esse modelo permite acompanhar a evolução do projeto com um processo mais organizado, mantendo uma rotina de validação antes da publicação de novas versões.
+Esse processo garante uma camada mínima de controle sobre a evolução da página, sem depender de etapas de build mais complexas.
 
 ## Estrutura do projeto
 
-- `index.html`: página principal de apresentação do projeto
-- `styles.css`: arquivo responsável pela estilização da interface
+- `index.html`: página principal publicada
+- `styles.css`: arquivo de estilos da landing page
+- `assets/`: imagens utilizadas pela landing page
 - `.github/workflows/ci.yml`: workflow de integração contínua
 - `.github/workflows/deploy.yml`: workflow de entrega contínua
 
-## Tecnologias e serviços utilizados
+## Publicação
 
-- Git e GitHub para versionamento e colaboração
-- GitHub Actions para automação do pipeline
-- GitHub Pages para publicação da página
-- HTML e CSS para a interface inicial do projeto
-
-## Execução do fluxo no GitHub
-
-Para utilizar esta estrutura no repositório remoto:
-
-1. Inicialize o projeto com Git.
-2. Envie os arquivos para a branch principal.
-3. Crie a branch `dev` para concentrar o desenvolvimento.
-4. Configure o GitHub Pages para publicação via GitHub Actions.
-5. Realize alterações na branch `dev` e acompanhe a execução do workflow de CI.
-6. Abra um Pull Request para `master` e, após o merge, acompanhe a execução do workflow de CD.
+A publicação é realizada por meio do GitHub Pages a partir da branch `master`. Sempre que há atualização nessa branch, o workflow de deploy envia o conteúdo do repositório e atualiza a página publicada.
 
 ## Finalidade no contexto do TCC
 
-No contexto do trabalho, esta estrutura demonstra a aplicação de boas práticas de engenharia de software no apoio ao desenvolvimento da solução principal. Mais do que publicar uma página, o repositório evidencia uma organização mínima de pipeline para validar mudanças, controlar versões e automatizar a disponibilização do projeto.
+No contexto do trabalho, este repositório demonstra a aplicação de uma estrutura inicial de CI/CD voltada à apresentação do projeto. O foco está em manter uma página organizada, coerente com o tema acadêmico e integrada a um fluxo básico de validação e publicação contínua.
