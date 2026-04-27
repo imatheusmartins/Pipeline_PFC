@@ -9,37 +9,44 @@ on:
     branches:
       - master
 
+env:
+  APP_DIR: FE-horus-develop/FE-horus-develop
+
 jobs:
-  validate-static-landing:
+  validate-react-landing:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do codigo
         uses: actions/checkout@v4
 
-      - name: Verificar arquivos principais
+      - name: Verificar estrutura principal do projeto React
         shell: bash
         run: |
-          test -f index.html
-          test -f styles.css
+          test -f "${APP_DIR}/package.json"
+          test -f "${APP_DIR}/vite.config.ts"
+          test -f "${APP_DIR}/src/main.tsx"
+          test -f "${APP_DIR}/src/App.tsx"
+          test -f "${APP_DIR}/src/routes/index.tsx"
 
-      - name: Verificar estrutura HTML essencial
+      - name: Verificar scripts essenciais
         shell: bash
         run: |
-          grep -Eq "<title>.*</title>" index.html
-          grep -Eq "<h1>.*</h1>" index.html
-          grep -Eq "Projeto|Referencial|CI/CD" index.html
+          grep -Eq '"build"' "${APP_DIR}/package.json"
+          grep -Eq '"dev"' "${APP_DIR}/package.json"
 
-      - name: Verificar referencias de estilos e imagens
+      - name: Verificar rota principal da landing page
         shell: bash
         run: |
-          grep -Eq 'href="styles.css"' index.html
-          grep -Eq 'src="assets/' index.html
+          grep -Eq 'createFileRoute\("/"\)' "${APP_DIR}/src/routes/index.tsx"
 
-      - name: Salvar artefato para auditoria
+      - name: Salvar arquivos principais para auditoria
         uses: actions/upload-artifact@v4
         with:
-          name: static-landing
+          name: react-landing-structure
           path: |
-            index.html
-            styles.css
+            ${{ env.APP_DIR }}/package.json
+            ${{ env.APP_DIR }}/vite.config.ts
+            ${{ env.APP_DIR }}/src/main.tsx
+            ${{ env.APP_DIR }}/src/App.tsx
+            ${{ env.APP_DIR }}/src/routes/index.tsx
