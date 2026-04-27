@@ -1,65 +1,57 @@
-# Deep learning aplicado ao diagnostico assistido de retinopatia diabetica
+# Deep learning aplicado ao diagnóstico assistido de retinopatia diabética
 
-Este repositorio apresenta a estrutura de pipeline CI/CD utilizada no contexto do projeto de TCC sobre deep learning aplicado ao diagnostico assistido de retinopatia diabetica.
+Este repositório reúne a estrutura inicial de integração contínua e entrega contínua adotada no desenvolvimento do projeto de TCC **Deep learning aplicado ao diagnóstico assistido de retinopatia diabética**.
 
-## Objetivo
+A proposta deste material é documentar como o projeto está sendo organizado em termos de versionamento, validação automática e publicação, de modo que a evolução da aplicação aconteça com mais controle, rastreabilidade e consistência.
 
-Organizar um fluxo basico de:
+## Sobre o repositório
 
-- desenvolvimento em `dev`
-- integracao continua com GitHub Actions
-- consolidacao de versoes em `master`
-- publicacao continua com GitHub Pages
+O conteúdo deste repositório representa a base do fluxo de CI/CD utilizado no projeto. Além da página de apresentação, foram definidos workflows para validar alterações no código e automatizar a publicação da versão principal.
 
-## Estrutura do fluxo
+Na prática, este repositório funciona como um apoio à condução do projeto, permitindo:
 
-1. Voce faz alteracoes na branch `dev`.
-2. O workflow de CI valida se o arquivo `index.html` existe e se contem o conteudo esperado.
-3. Depois, voce abre um Pull Request de `dev` para `master`.
-4. Ao aprovar e fazer merge, o push na `master` dispara o workflow de CD.
-5. O GitHub Pages publica automaticamente a pagina.
+- manter uma separação entre desenvolvimento e versão principal
+- executar verificações automáticas a cada atualização relevante
+- reduzir falhas manuais no processo de integração
+- publicar a versão mais recente de forma padronizada
 
-## Arquivos principais
+## Como o CI/CD está sendo implementado
 
-- `index.html`: pagina inicial de apresentacao do projeto
-- `.github/workflows/ci.yml`: integracao continua
-- `.github/workflows/deploy.yml`: entrega continua
+O fluxo foi estruturado de forma simples e objetiva, compatível com a fase inicial do projeto.
 
-## Como usar
+1. As alterações são realizadas na branch `dev`, destinada ao desenvolvimento.
+2. A cada atualização, o workflow de integração contínua executa validações básicas para verificar se a estrutura essencial da aplicação permanece íntegra.
+3. Após a conferência das mudanças, a integração com a branch `master` ocorre por meio de Pull Request.
+4. Quando o conteúdo é aprovado e incorporado à branch principal, o processo de entrega contínua é acionado.
+5. A publicação da página é realizada automaticamente com GitHub Pages.
 
-1. Crie um repositorio no GitHub.
-2. Envie estes arquivos para o repositorio.
-3. Inicialize o Git localmente:
+Esse modelo permite acompanhar a evolução do projeto com um processo mais organizado, mantendo uma rotina de validação antes da publicação de novas versões.
 
-```powershell
-git init
-git branch -M master
-git add .
-git commit -m "feat: estrutura pipeline ci cd do projeto"
-git remote add origin <URL_DO_SEU_REPOSITORIO>
-git push -u origin master
-```
+## Estrutura do projeto
 
-4. Crie a branch de desenvolvimento:
+- `index.html`: página principal de apresentação do projeto
+- `styles.css`: arquivo responsável pela estilização da interface
+- `.github/workflows/ci.yml`: workflow de integração contínua
+- `.github/workflows/deploy.yml`: workflow de entrega contínua
 
-```powershell
-git checkout -b dev
-git push -u origin dev
-```
+## Tecnologias e serviços utilizados
 
-5. No GitHub, acesse `Settings > Pages` e selecione `GitHub Actions` como fonte de deploy.
-6. Faça alguma pequena alteracao em `dev`, envie com `git push` e observe o workflow `CI`.
-7. Abra um Pull Request de `dev` para `master`, faça o merge e observe o workflow `CD`.
+- Git e GitHub para versionamento e colaboração
+- GitHub Actions para automação do pipeline
+- GitHub Pages para publicação da página
+- HTML e CSS para a interface inicial do projeto
 
-## Relacao com o projeto
+## Execução do fluxo no GitHub
 
-Voce pode explicar que:
+Para utilizar esta estrutura no repositório remoto:
 
-- `dev` concentra as evolucoes do projeto em desenvolvimento
-- `master` representa a versao principal publicada
-- o CI verifica automaticamente a consistencia minima da aplicacao
-- o CD publica a versao mais recente sem intervencao manual
+1. Inicialize o projeto com Git.
+2. Envie os arquivos para a branch principal.
+3. Crie a branch `dev` para concentrar o desenvolvimento.
+4. Configure o GitHub Pages para publicação via GitHub Actions.
+5. Realize alterações na branch `dev` e acompanhe a execução do workflow de CI.
+6. Abra um Pull Request para `master` e, após o merge, acompanhe a execução do workflow de CD.
 
-## Apresentacao resumida
+## Finalidade no contexto do TCC
 
-"Este projeto organiza uma estrutura de CI/CD para apoiar a evolucao e a publicacao de versoes de uma aplicacao voltada ao diagnostico assistido de retinopatia diabetica com deep learning. A proposta reforca boas praticas de desenvolvimento, validacao e entrega continua."
+No contexto do trabalho, esta estrutura demonstra a aplicação de boas práticas de engenharia de software no apoio ao desenvolvimento da solução principal. Mais do que publicar uma página, o repositório evidencia uma organização mínima de pipeline para validar mudanças, controlar versões e automatizar a disponibilização do projeto.

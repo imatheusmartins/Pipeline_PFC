@@ -3,137 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deep learning aplicado ao diagnostico assistido de retinopatia diabetica</title>
-  <style>
-    :root {
-      --bg: #f4f7fb;
-      --card: #ffffff;
-      --text: #183153;
-      --muted: #5e6d7e;
-      --primary: #0a7ea4;
-      --accent: #2db57b;
-      --border: #d7e1eb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(160deg, #eef6ff 0%, #f8fcff 55%, #edf8f1 100%);
-      color: var(--text);
-    }
-
-    main {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-    }
-
-    .card {
-      width: min(760px, 100%);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: 0 20px 60px rgba(24, 49, 83, 0.12);
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(10, 126, 164, 0.1);
-      color: var(--primary);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 18px 0 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-    }
-
-    p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      background: #fbfdff;
-    }
-
-    .item strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .status {
-      margin-top: 24px;
-      padding: 16px 18px;
-      border-left: 5px solid var(--accent);
-      background: rgba(45, 181, 123, 0.08);
-      border-radius: 12px;
-      color: #1f5b46;
-      font-weight: 600;
-    }
-  </style>
+  <title>Deep learning aplicado ao diagnóstico assistido de retinopatia diabética</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
     <section class="card">
       <span class="badge">Projeto de TCC</span>
-      <h1>Deep learning aplicado ao diagnostico assistido de retinopatia diabetica</h1>
+      <h1>Deep learning aplicado ao diagnóstico assistido de retinopatia diabética</h1>
       <p>
-        Este projeto apresenta uma proposta voltada ao diagnostico assistido de
-        retinopatia diabetica por meio da aplicacao de tecnicas de deep learning.
+        Este projeto apresenta uma proposta voltada ao diagnóstico assistido de
+        retinopatia diabética por meio da aplicação de técnicas de deep learning.
       </p>
       <p>
-        A estrutura desenvolvida busca apoiar a organizacao, a validacao e a
-        publicacao das versoes do projeto, mantendo coerencia com o tema academico
-        e com a evolucao da aplicacao.
+        Nesta etapa inicial, a página também descreve a estrutura de CI/CD adotada
+        para apoiar a organização, a validação e a publicação das versões do
+        projeto de forma contínua e controlada.
       </p>
 
       <div class="grid">
         <article class="item">
           <strong>Desenvolvimento</strong>
-          <span>As atualizacoes do projeto sao organizadas para favorecer evolucao e manutencao.</span>
+          <span>As atualizações são realizadas na branch de desenvolvimento para facilitar a evolução do projeto.</span>
         </article>
         <article class="item">
-          <strong>Publicacao</strong>
-          <span>As versoes consolidadas podem ser disponibilizadas de forma acessivel em ambiente web.</span>
+          <strong>Integração contínua</strong>
+          <span>O workflow de CI executa verificações automáticas para garantir a consistência mínima da aplicação.</span>
         </article>
         <article class="item">
-          <strong>Qualidade</strong>
-          <span>O fluxo inclui validacoes automatizadas para reforcar consistencia ao longo do projeto.</span>
+          <strong>Controle de versão</strong>
+          <span>As alterações aprovadas são integradas à branch principal para manter uma versão consolidada do sistema.</span>
         </article>
         <article class="item">
-          <strong>Entrega</strong>
-          <span>As entregas acompanham um processo estruturado de atualizacao e disponibilizacao.</span>
+          <strong>Entrega contínua</strong>
+          <span>Após a atualização da branch principal, a publicação da página pode ocorrer de forma automatizada.</span>
         </article>
       </div>
 
+      <div class="flow">
+        <h2>Estrutura inicial de CI/CD</h2>
+        <ol>
+          <li>O desenvolvimento das alterações acontece na branch <code>dev</code>.</li>
+          <li>A integração contínua verifica automaticamente se os arquivos essenciais do projeto permanecem válidos.</li>
+          <li>Depois da validação, as mudanças podem ser enviadas por meio de um Pull Request para a branch <code>master</code>.</li>
+          <li>Com a aprovação e o merge, a etapa de entrega contínua publica a versão mais recente da página.</li>
+        </ol>
+      </div>
+
       <div class="status">
-        Projeto estruturado para acompanhamento, validacao e publicacao de versoes.
+        Projeto estruturado para acompanhamento, validação e publicação contínua de versões.
       </div>
     </section>
   </main>
