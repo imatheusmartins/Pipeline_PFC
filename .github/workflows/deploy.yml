@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  APP_DIR: FE-horus-develop/FE-horus-develop
+
 permissions:
   contents: read
   pages: write
@@ -25,13 +28,28 @@ jobs:
       - name: Checkout do codigo
         uses: actions/checkout@v4
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ env.APP_DIR }}/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: ${{ env.APP_DIR }}
+        run: npm ci
+
+      - name: Gerar build da aplicacao
+        working-directory: ${{ env.APP_DIR }}
+        run: npm run build
+
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Enviar artefato da pagina
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ env.APP_DIR }}/dist
 
       - name: Publicar no GitHub Pages
         id: deployment
